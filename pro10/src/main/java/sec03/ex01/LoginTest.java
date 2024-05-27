@@ -1,4 +1,4 @@
-package sex01.ex01;
+package sec03.ex01;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -10,23 +10,18 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
 
-@WebServlet("/set")
-public class SetAttribute extends HttpServlet {
+@WebServlet("/login")
+public class LoginTest  extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
         
-        String ctxMesg = "context에 바인딩 됩니다.";
-        String sesMesg = "session에 바인딩 됩니다.";
-        String reqMesg = "request에 바인딩 됩니다.";
-
-        ServletContext ctx = getServletContext();
-        HttpSession session = request.getSession();
-        
-        ctx.setAttribute("context", ctxMesg);
-        session.setAttribute("session", sesMesg);
-        request.setAttribute("request", reqMesg);
-        
-        out.print("바인딩을 수행합니다.");
+        String user_name = request.getParameter("user_name");
+        String user_pw = request.getParameter("user_pw");
+        out.println("<html><body>");
+        out.println("이름은 "+ user_name+"<br>");
+        out.println("pw "+ user_pw+"<br>");
+        out.println("</body></html>");
+        		
     }
 }

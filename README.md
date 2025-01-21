@@ -1,4 +1,4 @@
-# WebInformationSystem1
+# JAVA
 
 
 ## Development enviroment
@@ -11,4 +11,4 @@
 
 - Dynamic Web Module : 4.0
 - Java 17
-- JavaScript 1
+- JavaScript
